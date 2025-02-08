@@ -1,0 +1,412 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 2px theme('colors.red.500'), 0 0 4px theme('colors.red.500'); }
+  50% { box-shadow: 0 0 4px theme('colors.red.500'), 0 0 8px theme('colors.red.500'); }
+  100% { box-shadow: 0 0 2px theme('colors.red.500'), 0 0 4px theme('colors.red.500'); }
+}
+
+.neon-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.illustration-grid {
+  background-image: 
+    linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.nav-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.7)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-down {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+/* Ajout des styles pour la galerie */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* Animation pour les effets de hover */
+@keyframes float-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.float-up {
+  animation: float-up 0.5s ease forwards;
+}
+
+/* Effet de brillance amélioré */
+.neon-box-subtle:hover {
+  box-shadow: 
+    0 0 20px theme('colors.violet.500/30'),
+    inset 0 0 20px theme('colors.violet.500/10');
+}
+
+/* Amélioration des effets de transparence */
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Amélioration de l'effet néon pour les cartes transparentes */
+.neon-box-subtle {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.neon-box-subtle:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  box-shadow: 
+    0 0 20px theme('colors.violet.500/30'),
+    inset 0 0 20px theme('colors.violet.500/10');
+  transform: translateY(-2px);
+}
+
+/* Amélioration du grid pattern */
+.bg-grid-white\/5 {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Styles pour la navigation fixe */
+.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(11, 11, 26, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-fixed.hidden {
+  display: none;
+}
+
+/* Animation pour le countdown */
+.countdown-fixed {
+  transition: all 0.3s ease-in-out;
+}
+
+.countdown-fixed:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Animation d'apparition en douceur */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.3s ease-out forwards;
+}
+
+/* Animation pour le scroll */
+.nav-scroll {
+  transition: all 0.3s ease;
+}
+
+.nav-scroll.scrolled {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Effet de flou pour le countdown */
+.countdown-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+/* Styles Web3 */
+.hexagon-icon {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+@keyframes float-random {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.5);
+    opacity: 0.4;
+  }
+}
+
+.animate-float-random {
+  animation: float-random 10s infinite;
+}
+
+/* Amélioration des effets néon */
+.neon-box-subtle {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-box-subtle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.neon-box-subtle:hover::before {
+  left: 100%;
+}
+
+/* Effet de grain */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+/* Effet cosmos */
+.starry-sky {
+  background: linear-gradient(to bottom, #0B0B1A, #1A1625);
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Nébuleuses colorées */
+.purple-haze {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(88, 28, 135, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 40% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Étoiles scintillantes */
+.starry-sky::before {
+  content: '';
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(1px 1px at 10% 10%, rgba(255, 255, 255, 0.8) 1px, transparent 0),
+    radial-gradient(2px 2px at 20% 20%, rgba(255, 255, 255, 0.6) 1px, transparent 0),
+    radial-gradient(1px 1px at 30% 30%, rgba(255, 255, 255, 0.8) 1px, transparent 0),
+    radial-gradient(2px 2px at 40% 40%, rgba(255, 255, 255, 0.6) 1px, transparent 0),
+    radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.8) 1px, transparent 0);
+  background-size: 250px 250px;
+  animation: stars-move 150s linear infinite;
+  z-index: 0;
+}
+
+/* Étoiles brillantes supplémentaires */
+.starry-sky::after {
+  content: '';
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(2px 2px at 15% 15%, rgba(255, 255, 255, 0.9) 1px, transparent 0),
+    radial-gradient(2px 2px at 35% 45%, rgba(255, 255, 255, 0.9) 1px, transparent 0),
+    radial-gradient(2px 2px at 55% 25%, rgba(255, 255, 255, 0.9) 1px, transparent 0);
+  background-size: 300px 300px;
+  animation: stars-twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes stars-twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* Effet de poussière d'étoiles */
+.stardust {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.01) 0%,
+      rgba(255, 255, 255, 0.02) 10%,
+      transparent 10%,
+      transparent 50%
+    );
+  background-size: 100px 100px;
+  animation: stardust-float 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes stardust-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+  }
+}
+
+/* Amélioration des effets lumineux */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Amélioration du gradient animé */
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
