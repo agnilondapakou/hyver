@@ -75,34 +75,34 @@ function App() {
                     ? 'bg-violet-500/5 text-violet-400 border-violet-500/20' 
                     : 'bg-violet-100 text-violet-700 border-violet-200'
                 } backdrop-blur-sm border`}>
-                  Join the Tech Revolution
+                  Join the Tech Communities Revolution
                 </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-6 font-cabinet">
-                Where Tech Minds
+                Hyver : Where Tech Minds
                 <span className="block mt-2 bg-gradient-to-r from-red-500 to-violet-500 text-transparent bg-clip-text">Unite & Thrive</span>
               </h1>
               <p className="text-gray-400 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
-                A vibrant community of developers, designers, and tech enthusiasts building the future together.
+                A vibrant community of developers, designers, and tech enthusiasts communities building the future together.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
                 <button className="group bg-red-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 flex items-center gap-2 w-full sm:w-auto border border-red-500/20">
                   Join Community 
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="group border border-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-white/5 transition-all duration-300 w-full sm:w-auto">
-                  Explore Events
-                </button>
+                {/* <button className="group border border-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-white/5 transition-all duration-300 w-full sm:w-auto">
+                  Achievements
+                </button> */}
               </div>
             </div>
           </div>
         </div>
 
         {/* Community Benefits Section */}
-        <div className="py-32 bg-gradient-to-b from-zinc-900/80 to-black/80 backdrop-blur-lg relative">
+        <div className="py-32 bg-gradient-to-b from-zinc-900/80 to-black/80 backdrop-blur-lg relative" id="benefits">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">Why Join Hyver?</h2>
+              <h2 className="text-4xl font-bold mb-6 neon-text">Why Join Hyveras a community ?</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">Connect with like-minded professionals, share knowledge, and grow together in our thriving tech ecosystem.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -160,7 +160,7 @@ function App() {
               <div className="md:col-span-2 md:row-span-2 group">
                 <div className="relative overflow-hidden rounded-2xl aspect-square md:aspect-auto md:h-full neon-box-subtle">
                   <img 
-                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87" 
+                    src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034256/hyver/fzcawucgsz1dddws65fm.jpg" 
                     alt="Tech Meetup" 
                     className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
                   />
@@ -176,22 +176,22 @@ function App() {
               {/* Images secondaires */}
               {[
                 {
-                  src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+                  src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034253/hyver/wklpoqvk9jdpwq0ikiqr.jpg",
                   title: "Workshop AI",
                   desc: "Formation pratique"
                 },
                 {
-                  src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b",
+                  src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034258/hyver/qsn8gdp6o7r030hkwsyi.jpg",
                   title: "Hackathon",
                   desc: "48h de code"
                 },
                 {
-                  src: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
+                  src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034253/hyver/pkv7qzxxphhntofibv2x.jpg",
                   title: "Conférence Tech",
                   desc: "Partage d'expérience"
                 },
                 {
-                  src: "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
+                  src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034267/hyver/bjlmlodsosfu4co3hzjj.jpg",
                   title: "Networking",
                   desc: "Rencontres pro"
                 }

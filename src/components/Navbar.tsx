@@ -27,6 +27,7 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#about" className="text-gray-300 hover:text-red-500 transition-colors">About</a>
+            <a href="#benefits" className="text-gray-300 hover:text-red-500 transition-colors">Benefits</a>
             <a href="#events" className="text-gray-300 hover:text-red-500 transition-colors">Events</a>
             <a href="#community" className="text-gray-300 hover:text-red-500 transition-colors">Community</a>
             <a href="#resources" className="text-gray-300 hover:text-red-500 transition-colors">Resources</a>
