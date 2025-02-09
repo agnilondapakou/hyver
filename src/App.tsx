@@ -151,8 +151,8 @@ function App() {
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">Notre Communauté en Action</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">Découvrez les moments forts de nos événements et rencontres.</p>
+              <h2 className="text-4xl font-bold mb-6 neon-text">Our Community in Action</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">Discover the highlights of our events and meetings.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -166,8 +166,8 @@ function App() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-white text-xl font-bold mb-2">Tech Meetup 2024</h3>
-                      <p className="text-gray-200">Une journée d'échange et d'innovation</p>
+                      <h3 className="text-white text-xl font-bold mb-2">Tech Communities Day 2024</h3>
+                      <p className="text-gray-200">Juillet 2024</p>
                     </div>
                   </div>
                 </div>
@@ -177,23 +177,23 @@ function App() {
               {[
                 {
                   src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034253/hyver/wklpoqvk9jdpwq0ikiqr.jpg",
-                  title: "Workshop AI",
-                  desc: "Formation pratique"
+                  title: "Tech Communities Day 2024",
+                  desc: "Juillet 2024"
                 },
                 {
                   src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034258/hyver/qsn8gdp6o7r030hkwsyi.jpg",
-                  title: "Hackathon",
-                  desc: "48h de code"
+                  title: "Tech Communities Day 2024",
+                  desc: "Juillet 2024"
                 },
                 {
                   src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034253/hyver/pkv7qzxxphhntofibv2x.jpg",
-                  title: "Conférence Tech",
-                  desc: "Partage d'expérience"
+                  title: "Tech Communities Day 2024",
+                  desc: "Juillet 2024"
                 },
                 {
                   src: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034267/hyver/bjlmlodsosfu4co3hzjj.jpg",
-                  title: "Networking",
-                  desc: "Rencontres pro"
+                  title: "Tech Communities Day 2024",
+                  desc: "Juillet 2024"
                 }
               ].map((item, index) => (
                 <div key={index} className="group">
@@ -215,18 +215,57 @@ function App() {
             </div>
 
             {/* Galerie Instagram-style */}
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <div key={index} className="group relative aspect-square overflow-hidden rounded-xl neon-box-subtle">
+            {/*  center images */}
+            {/* <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+                <div className="group relative aspect-square overflow-hidden rounded-xl neon-box-subtle">
                   <img 
-                    src={`https://source.unsplash.com/random/400x400?tech&${index}`}
-                    alt={`Gallery ${index + 1}`}
+                    src='https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034254/hyver/qn0dnewtezf6kxvsimnj.jpg'
+                    alt="Tech Communities Day 2024"
                     className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              ))}
-            </div>
+                <div className="group relative aspect-square overflow-hidden rounded-xl neon-box-subtle">
+                  <img 
+                    src='https://res.cloudinary.com/dpofk8xy0/image/upload/v1739068718/hyver/feaf8x4ocl1xhigeabuc.jpg'
+                    alt="Tech Communities Day 2024"
+                    className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="group relative aspect-square overflow-hidden rounded-xl neon-box-subtle">
+                  <img 
+                    src='https://res.cloudinary.com/dpofk8xy0/image/upload/v1739068751/hyver/ecpiy7istktr7palthev.jpg'
+                    alt="Tech Communities Day 2024"
+                    className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="group relative aspect-square overflow-hidden rounded-xl neon-box-subtle">
+                  <img 
+                    src='https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034254/hyver/qn0dnewtezf6kxvsimnj.jpg'
+                    alt="Tech Communities Day 2024"
+                    className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="group relative aspect-square overflow-hidden rounded-xl neon-box-subtle">
+                  <img 
+                    src='https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034254/hyver/qn0dnewtezf6kxvsimnj.jpg'
+                    alt="Tech Communities Day 2024"
+                    className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="group relative aspect-square overflow-hidden rounded-xl neon-box-subtle">
+                  <img 
+                    src='https://res.cloudinary.com/dpofk8xy0/image/upload/v1739034254/hyver/qn0dnewtezf6kxvsimnj.jpg'
+                    alt="Tech Communities Day 2024"
+                    className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+            </div> */}
           </div>
         </div>
 
@@ -253,9 +292,9 @@ function App() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">Nos Projets</h2>
+              <h2 className="text-4xl font-bold mb-6 neon-text">Our projects</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Découvrez nos initiatives phares pour la communauté tech africaine
+              Discover our flagship initiatives for the African tech community.
               </p>
             </div>
 
@@ -268,11 +307,11 @@ function App() {
                     <Calendar className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Tech Communities Day</h3>
-                  <p className="text-gray-400 mb-6">Le plus grand rassemblement des communautés tech d'Afrique</p>
+                  <p className="text-gray-400 mb-6">Africa's largest gathering of tech communities.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-violet-400 text-sm">19 Juillet 2025</span>
+                    <span className="text-violet-400 text-sm">Coming soon...</span>
                     <button className="text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-2">
-                      En savoir plus <ArrowRight className="w-4 h-4" />
+                      See more <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -286,11 +325,11 @@ function App() {
                     <GraduationCap className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Tech Communities Clubs</h3>
-                  <p className="text-gray-400 mb-6">Programme d'excellence pour les étudiants passionnés de tech</p>
+                  <p className="text-gray-400 mb-6">Leadership program for students with a passion for tech. </p>
                   <div className="flex items-center justify-between">
                     <span className="text-violet-400 text-sm">15+ Clubs</span>
                     <button className="text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-2">
-                      En savoir plus <ArrowRight className="w-4 h-4" />
+                      See more <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -304,11 +343,11 @@ function App() {
                     <Code2 className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Open Source For All</h3>
-                  <p className="text-gray-400 mb-6">Initiative pour démocratiser l'open source en Afrique</p>
+                  <p className="text-gray-400 mb-6">Initiative to democratize open source in Africa</p>
                   <div className="flex items-center justify-between">
                     <span className="text-violet-400 text-sm">Projets actifs</span>
                     <button className="text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-2">
-                      En savoir plus <ArrowRight className="w-4 h-4" />
+                      See more <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
