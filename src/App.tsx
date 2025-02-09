@@ -3,6 +3,9 @@ import { Users, Laptop, Calendar, ArrowRight, Github, Twitter, Disc as Discord, 
 import Navbar from './components/Navbar';
 import EventCountdown from './components/EventCountdown';
 import { useTheme } from './hooks/useTheme';
+import AfricaMap from './components/AfricaMap';
+import ScrollToTop from './components/ScrollToTop';
+import { Link as RouterLink } from 'react-router-dom';
 
 function App() {
   const [isCountdownEnabled] = useState(true);
@@ -99,7 +102,7 @@ function App() {
         </div>
 
         {/* Community Benefits Section */}
-        <div className="py-32 bg-gradient-to-b from-zinc-900/80 to-black/80 backdrop-blur-lg relative" id="benefits">
+        <div className="py-32 bg-gradient-to-b from-zinc-900/80 to-black/80 backdrop-blur-lg relative" id="about">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <h2 className="text-4xl font-bold mb-6 neon-text">Why Join Hyveras a community ?</h2>
@@ -144,7 +147,7 @@ function App() {
         </div>
 
         {/* Gallery Section */}
-        <div className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden">
+        <div className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden" id="gallery">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10" />
             <div className="absolute inset-0 bg-grid-white/5" />
@@ -270,7 +273,7 @@ function App() {
         </div>
 
         {/* Nos Projets Section */}
-        <div className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden">
+        <div id="projects" className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-grid-white/5" />
             <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10" />
@@ -292,72 +295,55 @@ function App() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">Our projects</h2>
+              <h2 className="text-4xl font-bold mb-6 neon-text">Our Projects</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-              Discover our flagship initiatives for the African tech community.
+                Discover our flagship initiatives for the African tech community
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Tech Communities Day */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-violet-800/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle hover:transform hover:scale-105 transition-all duration-300">
-                  <div className="hexagon-icon bg-gradient-to-br from-violet-500 to-violet-700 mb-6">
-                    <Calendar className="w-8 h-8 text-white" />
+              {[
+                {
+                  title: "Tech Communities Day",
+                  description: "The largest gathering of tech communities in Africa",
+                  path: "/tech-communities-day",
+                  icon: Calendar
+                },
+                {
+                  title: "Tech Communities Clubs",
+                  description: "Excellence program for tech-passionate students",
+                  path: "/tech-communities-clubs",
+                  icon: GraduationCap
+                },
+                {
+                  title: "Open Source For All",
+                  description: "Promoting open source in Africa",
+                  path: "/open-source-for-all",
+                  icon: Code2
+                }
+              ].map((project, index) => (
+                <RouterLink
+                  key={index}
+                  to={project.path}
+                  className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle hover:transform hover:scale-105 transition-all duration-300"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-violet-800/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                  <div className="relative">
+                    <project.icon className="w-8 h-8 text-violet-400 mb-4" />
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-400 mb-4">{project.description}</p>
+                    <div className="flex items-center text-violet-400">
+                      Learn more <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">Tech Communities Day</h3>
-                  <p className="text-gray-400 mb-6">Africa's largest gathering of tech communities.</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-violet-400 text-sm">Coming soon...</span>
-                    <button className="text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-2">
-                      See more <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Tech Communities Clubs */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-violet-800/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle hover:transform hover:scale-105 transition-all duration-300">
-                  <div className="hexagon-icon bg-gradient-to-br from-violet-500 to-violet-700 mb-6">
-                    <GraduationCap className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Tech Communities Clubs</h3>
-                  <p className="text-gray-400 mb-6">Leadership program for students with a passion for tech. </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-violet-400 text-sm">15+ Clubs</span>
-                    <button className="text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-2">
-                      See more <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Open Source For All */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-violet-800/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle hover:transform hover:scale-105 transition-all duration-300">
-                  <div className="hexagon-icon bg-gradient-to-br from-violet-500 to-violet-700 mb-6">
-                    <Code2 className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Open Source For All</h3>
-                  <p className="text-gray-400 mb-6">Initiative to democratize open source in Africa</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-violet-400 text-sm">Projets actifs</span>
-                    <button className="text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-2">
-                      See more <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+                </RouterLink>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Activities Section */}
-        <div className="py-32 bg-black/80 backdrop-blur-lg relative">
+        <div className="py-32 bg-black/80 backdrop-blur-lg relative" id="events">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <h2 className="text-4xl font-bold mb-6 neon-text">What We Do</h2>
@@ -535,6 +521,78 @@ function App() {
           </div>
         </div>
 
+        {/* Our Presence in Africa */}
+        <div id="presence" className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-grid-white/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10" />
+          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-bold mb-6 neon-text">Our Presence in Africa</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Discover our growing network of tech communities across Africa
+              </p>
+            </div>
+
+            {/* Countries with flags */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  country: "Togo",
+                  flag: "🇹🇬",
+                  members: "500+",
+                  communities: 5,
+                  description: "Dynamic and growing community"
+                },
+                {
+                  country: "Ivory Coast",
+                  flag: "🇨🇮",
+                  members: "800+",
+                  communities: 8,
+                  description: "Major West African tech hub"
+                },
+                {
+                  country: "Benin",
+                  flag: "🇧🇯",
+                  members: "400+",
+                  communities: 4,
+                  description: "Emerging tech ecosystem"
+                },
+                {
+                  country: "Niger",
+                  flag: "🇳🇪",
+                  members: "300+",
+                  communities: 3,
+                  description: "Growing tech community"
+                }
+              ].map((country, index) => (
+                <div 
+                  key={index} 
+                  className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle hover:transform hover:scale-105 transition-all duration-300"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-violet-800/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                  <div className="relative">
+                    <div className="text-6xl mb-4">{country.flag}</div>
+                    <div className="text-xl font-bold mb-2">{country.country}</div>
+                    <div className="text-gray-400 text-sm mb-4">{country.description}</div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span className="text-gray-400">Members</span>
+                        <span className="text-violet-400 font-bold">{country.members}</span>
+                      </div>
+                      <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span className="text-gray-400">Communities</span>
+                        <span className="text-violet-400 font-bold">{country.communities}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="py-32 relative overflow-hidden">
           <div className="absolute inset-0">
@@ -621,6 +679,7 @@ function App() {
           </div>
         </footer>
       </div>
+      <ScrollToTop />
     </div>
   );
 }

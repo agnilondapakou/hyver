@@ -10,7 +10,7 @@ module.exports = {
         satoshi: ['Satoshi', 'sans-serif'],
       },
       colors: {
-        // Ajout de la palette de couleurs personnalisée
+        // Vous pouvez ajouter des couleurs personnalisées ici
       },
       animation: {
         'pulse': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
