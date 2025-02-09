@@ -469,7 +469,7 @@ function App() {
         <div className="py-32" id="partners">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">They put their trust in us</h2>
+            <h2 className="text-4xl font-bold mb-6">They believed in us</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
               Let's collaborate with industry leaders to offer the best opportunities to our community.
               </p>
