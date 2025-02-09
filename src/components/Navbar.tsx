@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
@@ -8,7 +8,7 @@ interface NavbarProps {
   currentTheme: string;
 }
 
-export default function Navbar({ onThemeToggle, currentTheme }: NavbarProps) {
+export default function Navbar({}: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -70,7 +70,7 @@ export default function Navbar({ onThemeToggle, currentTheme }: NavbarProps) {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <RouterLink to="/">
-              <img src="https://i.imgur.com/XKUVktL.png" alt="Hyver Logo" className="h-8" />
+              <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739128156/hyver/xasndqlpxlvz35d4ll1f.png" alt="Hyver Logo" className="h-8" />
             </RouterLink>
           </div>
           
