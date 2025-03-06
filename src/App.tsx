@@ -220,9 +220,9 @@ function App() {
         <div className="py-32 bg-black/80 backdrop-blur-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">Événements</h2>
+              <h2 className="text-4xl font-bold mb-6 neon-text">Events</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Rejoignez-nous lors de nos prochains événements
+              Join us at our next events
               </p>
             </div>
 
@@ -238,13 +238,13 @@ function App() {
                   <div className="flex-grow text-center md:text-left">
                     <h3 className="text-2xl font-bold mb-2">Tech Communities Day 2025</h3>
                     <p className="text-gray-400 mb-4">
-                      Le plus grand rassemblement des communautés tech d'Afrique
+                    Africa's largest gathering of tech communities
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                      <span className="inline-flex items-center gap-2 text-violet-400">
+                      {/* <span className="inline-flex items-center gap-2 text-violet-400">
                         <Calendar className="w-4 h-4" />
                         19 Juillet 2025
-                      </span>
+                      </span> */}
                       <span className="inline-flex items-center gap-2 text-violet-400">
                         <MapPin className="w-4 h-4" />
                         Lomé, Togo
