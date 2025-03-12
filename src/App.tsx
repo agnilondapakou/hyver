@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, Disc as Discord, MapPin } from 'lucide-react';
+import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, MapPin } from 'lucide-react';
 import Navbar from './components/Navbar';
 // import EventCountdown from './components/EventCountdown';
 import { useTheme } from './hooks/useTheme';
@@ -79,8 +79,8 @@ function App() {
                 <a href="https://tally.so/r/wkJBoR" target='_blank'>
                   <button className="group px-8 py-4 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 transition-all duration-300 neon-box flex items-center justify-center gap-2">
                     Join the Community
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
                 </a>
                 {/* <button className="px-8 py-4 border border-white/10 rounded-full font-semibold hover:bg-white/5 transition-all duration-300 flex items-center gap-2">
                   Explore Projects
@@ -153,18 +153,25 @@ function App() {
               </div>
               <h3 className="text-2xl font-semibold mb-4">Regular Events</h3>
               <p className="text-gray-400 leading-relaxed">Participate in meetups, hackathons, and networking events throughout the year.</p>
-              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Projects Section */}
-        <div id="projects" className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden">
+        {/* What We Do Section */}
+        <div className="py-32 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-grid-white/[0.02]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-blue-500/5" />
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">What we do</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Discover our flagship initiatives for the African tech community
+          <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                What We Do
+              </h2>
+              <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
+                Building and supporting tech communities across Africa
               </p>
             </div>
 
@@ -173,21 +180,18 @@ function App() {
                 {
                   title: "Tech Communities Day",
                   description: "The largest gathering of tech communities in Africa",
-                  // path: "/tech-communities-day",
                   path: "#",
                   logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739117395/hyver/ywoot4qudcn1dbbd5i9y.png"
                 },
                 {
                   title: "Tech Communities Clubs",
                   description: "Excellence program for tech-passionate students",
-                  // path: "/tech-communities-clubs",
                   path: "#",
                   logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739116626/hyver/sxdttxb9urni5zjl49gj.png"
                 },
                 {
                   title: "Open Source For All",
                   description: "Promoting open source in Africa",
-                  // path: "/open-source-for-all",
                   path: "#",
                   logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739117673/hyver/knczly3kmed9hp9oaux2.svg"
                 }
@@ -195,19 +199,26 @@ function App() {
                 <RouterLink
                   key={index}
                   to={project.path}
-                  className="group relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-red-500/10 neon-box-red hover:transform hover:scale-105 transition-all duration-300"
+                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 
+                  hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-violet-800/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-blue-500/5 rounded-2xl 
+                  blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
+                  
                   <div className="relative">
-                    <img 
-                      src={project.logo} 
-                      alt={project.title} 
-                      className="w-16 h-16 mb-6 object-contain"
-                    />
-                    <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                    <p className="text-gray-400 mb-6">{project.description}</p>
-                    <div className="flex items-center text-red-400 group-hover:text-red-300 transition-colors">
-                      Learn more <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <div className="flex justify-center">
+                      <img 
+                        src={project.logo} 
+                        alt={project.title} 
+                        className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 group-hover:opacity-100 
+                        transition-all duration-300 transform group-hover:scale-105"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 text-white/90 text-center">{project.title}</h3>
+                    <p className="text-gray-400/80 mb-8 text-center">{project.description}</p>
+                    <div className="flex items-center justify-center text-blue-300/80 group-hover:text-blue-300 transition-colors">
+                      Learn more 
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </RouterLink>
@@ -388,261 +399,425 @@ function App() {
         </div>
       </div>
 
-      {/* Activities Section */}
-        {/* <div className="py-32 bg-black/80 backdrop-blur-lg relative" id="events">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">What We Do</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Explore our diverse range of activities and opportunities for growth.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className={`backdrop-blur-lg ${
-              theme === 'dark' 
-                ? 'bg-white/5 hover:bg-white/10 border-white/10' 
-                : 'bg-gray-50 hover:bg-gray-100 border-gray-200'
-              } p-8 rounded-2xl transition-all duration-300 border neon-box-subtle`}>
-                <Code className="w-8 h-8 text-violet-500 mb-4 neon-icon" />
-              <h3 className="text-xl font-semibold mb-2">Coding Sessions</h3>
-              <p className="text-gray-400">Collaborative coding and pair programming sessions.</p>
-            </div>
-            <div className={`backdrop-blur-lg ${
-              theme === 'dark' 
-                ? 'bg-white/5 hover:bg-white/10 border-white/10' 
-                : 'bg-gray-50 hover:bg-gray-100 border-gray-200'
-              } p-8 rounded-2xl transition-all duration-300 border neon-box-subtle`}>
-                <BookOpen className="w-8 h-8 text-violet-500 mb-4 neon-icon" />
-              <h3 className="text-xl font-semibold mb-2">Tech Talks</h3>
-              <p className="text-gray-400">Knowledge sharing sessions on latest technologies.</p>
-            </div>
-            <div className={`backdrop-blur-lg ${
-              theme === 'dark' 
-                ? 'bg-white/5 hover:bg-white/10 border-white/10' 
-                : 'bg-gray-50 hover:bg-gray-100 border-gray-200'
-              } p-8 rounded-2xl transition-all duration-300 border neon-box-subtle`}>
-                <MessageSquare className="w-8 h-8 text-violet-500 mb-4 neon-icon" />
-              <h3 className="text-xl font-semibold mb-2">Mentorship</h3>
-              <p className="text-gray-400">One-on-one guidance from experienced professionals.</p>
-            </div>
-            <div className={`backdrop-blur-lg ${
-              theme === 'dark' 
-                ? 'bg-white/5 hover:bg-white/10 border-white/10' 
-                : 'bg-gray-50 hover:bg-gray-100 border-gray-200'
-              } p-8 rounded-2xl transition-all duration-300 border neon-box-subtle`}>
-                <Rocket className="w-8 h-8 text-violet-500 mb-4 neon-icon" />
-              <h3 className="text-xl font-semibold mb-2">Projects</h3>
-              <p className="text-gray-400">Collaborative projects and hackathons.</p>
-            </div>
-          </div>
+      {/* Call for Applications Section */}
+      {/* <div className="py-32 bg-gradient-to-b from-black/80 to-blue-900/10 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.02]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-blue-500/5" />
         </div>
-        </div> */}
-
-        {/* Community Stats - Version modernisée */}
-        {/* <div className="py-32 bg-gradient-to-b from-black/80 to-zinc-900/80 backdrop-blur-lg relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-grid-white/5" />
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10" />
-      </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
+              Applications Open
+            </span>
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+              Host TCD 2026
+            </h2>
+            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
+              Shape the future of tech communities in Africa by hosting the next edition
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
+                Why Host TCD?
+              </h3>
               {[
-                { number: "5K+", label: "Community Members", icon: Users },
-                { number: "200+", label: "Events Hosted", icon: Calendar },
-                { number: "50+", label: "Tech Partners", icon: Laptop },
-                { number: "20+", label: "Cities", icon: MessageSquare }
-              ].map((stat, index) => (
-                <div key={index} className="relative group">
-                  <div className="absolute inset-0 bg-violet-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                  <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle">
-                    <stat.icon className="w-8 h-8 text-violet-400 mb-4" />
-                    <div className="text-5xl font-bold mb-3 bg-gradient-to-r from-violet-400 to-violet-600 text-transparent bg-clip-text group-hover:scale-110 transition-transform">
-                      {stat.number}
-                    </div>
-                    <div className="text-gray-400 text-lg">{stat.label}</div>
-                  </div>
+                {
+                  title: "Global Recognition",
+                  description: "Position your community at the forefront of Africa's tech ecosystem"
+                },
+                {
+                  title: "Network Expansion",
+                  description: "Connect with influential tech leaders and communities across the continent"
+                },
+                {
+                  title: "Economic Impact",
+                  description: "Drive technological innovation and growth in your local ecosystem"
+                }
+              ].map((benefit, index) => (
+                <div 
+                  key={index} 
+                  className="p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/5 
+                  transition-all duration-300 hover:translate-x-1"
+                >
+                  <h4 className="text-lg font-semibold mb-2 text-white/90">{benefit.title}</h4>
+                  <p className="text-gray-400/80">{benefit.description}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </div> */}
 
-        {/* Section Partenaires */}
-        <div className="py-32" id="partners">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold mb-6">They believed in us</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-              Let's collaborate with industry leaders to offer the best opportunities to our community.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {/* Partenaire 1 */}
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123720/hyver/bxlbl3mj9ze7tju1tcl5.png" alt="Republique Togolaise" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-2xl blur-xl 
+              group-hover:blur-2xl transition-all duration-500 opacity-50" />
+              <div className="relative p-8 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-sm">
+                <h3 className="text-2xl font-bold mb-6 text-white/90">Ready to Apply?</h3>
+                <p className="text-gray-400/90 mb-8">
+                  Submit your application to host Tech Communities Day 2026
+                </p>
+                <a 
+                  href="https://forms.gle/your-form-url" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-block w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white 
+                  rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 
+                  transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/25"
+                >
+                  Apply Now
+                </a>
+                <div className="mt-8 grid grid-cols-2 gap-4 text-sm">
+                  <div className="p-4 rounded-xl bg-black/20 backdrop-blur-sm">
+                    <div className="text-blue-300/90 font-medium mb-1">Deadline</div>
+                    <div className="text-white/80">Dec 31, 2025</div>
+                  </div>
+                  <div className="p-4 rounded-xl bg-black/20 backdrop-blur-sm">
+                    <div className="text-blue-300/90 font-medium mb-1">Announcement</div>
+                    <div className="text-white/80">Mar 1, 2026</div>
+                  </div>
+                </div>
               </div>
-
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123729/hyver/djme4rlmeq9afqjl2y9k.png" alt="GIZ" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-              
-              {/* Partenaire 2 */}
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739114963/hyver/fbq9i5ihx0ky21owh8dh.png" alt="Kondjigbalẽ" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-              
-              {/* Partenaire 3 */}
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739122839/hyver/xfwnugxyopeu00q9ngwn.png" alt="Killigiants" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-              
-              {/* Partenaire 4 */}
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124078/hyver/zgafm8v60bodfuozxydm.png" alt="Lomé Business School" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124280/hyver/hmb9oxcfcjcjxpp73zy6.png" alt="Agence Togo Digital" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124382/hyver/ixk7qdmqjklldviqthzb.png" alt="Google DSC LBS" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124290/hyver/wajh0lbw5zxolht8g6bn.png" alt="Google DSC UL" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/wn2adl5xzp6a40kfjxjw.png" alt="Google DSC IAI" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
-              </div>
-
-              <div className={`${
-                theme === 'dark' 
-                  ? 'bg-white/5 hover:bg-white/10' 
-                  : 'bg-gray-50 hover:bg-gray-100'
-              } p-8 rounded-2xl transition-all duration-300 group hover:shadow-violet-500/20 hover:shadow-lg`}>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/lpvjaes7l3lrv3wm85cg.png" alt="Google DSC Defitech" className="h-12 w-auto mx-auto grayscale group-hover:grayscale-0 transition-all" />
             </div>
           </div>
-        </div>
-      </div>
 
-        {/* Our Presence in Africa */}
-        <div id="presence" className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-grid-white/5" />
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10" />
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">Our Presence in Africa</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Discover our growing network of tech communities across Africa
-              </p>
-            </div>
-
-            {/* Countries with flags */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mt-20">
+            <h3 className="text-2xl font-bold mb-10 text-center bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
+              Key Requirements
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 {
-                  country: "Togo",
-                  flag: "🇹🇬",
-                  // members: "500+",
-                  // communities: 5,
-                  description: "Dynamic and growing community"
+                  requirement: "Active Community",
+                  detail: "2+ Years"
                 },
                 {
-                  country: "Ivory Coast",
-                  flag: "🇨🇮",
-                  // members: "800+",
-                  // communities: 8,
-                  description: "Major West African tech hub"
+                  requirement: "Venue Capacity",
+                  detail: "2000+ People"
                 },
                 {
-                  country: "Benin",
-                  flag: "🇧🇯",
-                  // members: "400+",
-                  // communities: 4,
-                  description: "Emerging tech ecosystem"
+                  requirement: "Tech Network",
+                  detail: "Local Ecosystem"
                 },
                 {
-                  country: "Niger",
-                  flag: "🇳🇪",
-                  // members: "300+",
-                  // communities: 3,
-                  description: "Growing tech community"
+                  requirement: "Experience",
+                  detail: "Event Organization"
                 }
-              ].map((country, index) => (
+              ].map((req, index) => (
                 <div 
                   key={index} 
-                  className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle hover:transform hover:scale-105 transition-all duration-300"
+                  className="text-center p-6 rounded-xl bg-white/[0.02] border border-white/5 
+                  hover:bg-white/[0.04] transition-all duration-300"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-violet-800/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                  <div className="relative">
-                    <div className="text-6xl mb-4">{country.flag}</div>
-                    <div className="text-xl font-bold mb-2">{country.country}</div>
-                    <div className="text-gray-400 text-sm mb-4">{country.description}</div>
-                    {/* <div className="flex flex-col gap-2">
-                      <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                        <span className="text-gray-400">Members</span>
-                        <span className="text-violet-400 font-bold">{country.members}</span>
-                      </div>
-                      <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                        <span className="text-gray-400">Communities</span>
-                        <span className="text-violet-400 font-bold">{country.communities}</span>
-                      </div>
-                    </div> */}
-                  </div>
+                  <div className="text-white/80 font-medium mb-1">{req.requirement}</div>
+                  <div className="text-blue-300/80 text-sm">{req.detail}</div>
             </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* Community Stats - Version modernisée */}
+      {/* <div className="py-32 bg-gradient-to-b from-black/80 to-zinc-900/80 backdrop-blur-lg relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/5" />
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10" />
+    </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { number: "5K+", label: "Community Members", icon: Users },
+              { number: "200+", label: "Events Hosted", icon: Calendar },
+              { number: "50+", label: "Tech Partners", icon: Laptop },
+              { number: "20+", label: "Cities", icon: MessageSquare }
+            ].map((stat, index) => (
+              <div key={index} className="relative group">
+                <div className="absolute inset-0 bg-violet-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle">
+                  <stat.icon className="w-8 h-8 text-violet-400 mb-4" />
+                  <div className="text-5xl font-bold mb-3 bg-gradient-to-r from-violet-400 to-violet-600 text-transparent bg-clip-text group-hover:scale-110 transition-transform">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-400 text-lg">{stat.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> */}
+
+      {/* Partners Section */}
+      <div className="py-32 relative overflow-hidden" id="partners">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.02]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
+              Our Partners
+            </span>
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+              They Believed in Us
+            </h2>
+            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
+              Working together to build Africa's tech ecosystem
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              {
+                name: "République Togolaise",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123720/hyver/bxlbl3mj9ze7tju1tcl5.png",
+                className: "h-16 md:h-20"
+              },
+              {
+                name: "GIZ",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123729/hyver/djme4rlmeq9afqjl2y9k.png",
+                className: "h-12 md:h-16"
+              },
+              {
+                name: "Kondjigbalẽ",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739114963/hyver/fbq9i5ihx0ky21owh8dh.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Killigiants",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739122839/hyver/xfwnugxyopeu00q9ngwn.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Lomé Business School",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124078/hyver/zgafm8v60bodfuozxydm.png",
+                className: "h-16 md:h-20"
+              },
+              {
+                name: "Agence Togo Digital",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124280/hyver/hmb9oxcfcjcjxpp73zy6.png",
+                className: "h-12 md:h-16"
+              },
+              {
+                name: "Google DSC LBS",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124382/hyver/ixk7qdmqjklldviqthzb.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Google DSC UL",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124290/hyver/wajh0lbw5zxolht8g6bn.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Google DSC IAI",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/wn2adl5xzp6a40kfjxjw.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Google DSC Defitech",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/lpvjaes7l3lrv3wm85cg.png",
+                className: "h-14 md:h-16"
+              }
+            ].map((partner, index) => (
+              <div 
+                key={index}
+                className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 
+                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
+                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
+                
+                <div className="relative flex items-center justify-center min-h-[80px]">
+                  <div className="absolute inset-0 bg-white/0 group-hover:bg-white/100 transition-all duration-300 rounded-xl" />
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className={`relative z-10 w-auto object-contain opacity-75 
+                    group-hover:opacity-100 transition-all duration-300
+                    ${partner.className}`}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Partner CTA */}
+          {/* <div className="mt-20 text-center">
+            <a 
+              href="#contact" 
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.02] border border-white/5 
+              hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 text-gray-400/90 hover:text-white/90"
+            >
+              Become a Partner
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div> */}
+        </div>
+      </div>
+
+      {/* Countries Section */}
+      <div className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.02]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
+              Our Presence
+            </span>
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+              Active Countries
+            </h2>
+            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
+              Building tech communities across Africa
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              {
+                name: "Benin",
+                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647692/hyver/ukumm0cwh6vxssk1jll1.png",
+                // communities: 8,
+                members: "Emerging tech ecosystem"
+              },
+              {
+                name: "Ivory Coast",
+                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647694/hyver/ijlhwayfqsufofiis9oy.png",
+                // communities: 6,
+                members: "Major West African tech hub"
+              },
+              {
+                name: "Niger",
+                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647695/hyver/cvcdjhphchvt4gv1safx.png",
+                // communities: 4,
+                members: "Growing tech community"
+              },
+              {
+                name: "Togo",
+                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647696/hyver/fzth5qkrz9q5ja5xxe7m.png",
+                // communities: 12,
+                members: "Dynamic and growing community"
+              }
+            ].map((country, index) => (
+              <div 
+                key={index}
+                className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 
+                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
+                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
+                
+                <div className="relative flex flex-col items-center text-center">
+                  <img 
+                    src={country.flag} 
+                    alt={`${country.name} flag`}
+                    className="w-20 h-20 object-cover rounded-full mb-4 border-2 border-white/10"
+                  />
+                  <h3 className="text-xl font-bold mb-2">{country.name}</h3>
+                  <div className="text-gray-400">
+                    {/* {/* <p className="mb-1">{country.communities} Communities</p> */}
+                    <p>{country.members} </p> 
+            </div>
+            </div>
+            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="py-32 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-900/30 via-black/90 to-violet-900/30" />
-            <div className="absolute inset-0 bg-grid-white/5" />
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* Future Projects Section */}
+      {/* <div className="py-32 relative overflow-hidden border-t border-white/[0.02]">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.01]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-red-500/[0.02]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
+              Coming Soon
+            </span>
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+              Future Projects
+            </h2>
+            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
+              Exciting initiatives on the horizon
+            </p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Tech Communities Academy",
+                description: "A comprehensive learning platform for tech enthusiasts across Africa",
+                status: "Coming Q3 2024",
+                icon: "��"
+              },
+              {
+                name: "African Tech Summit",
+                description: "The largest gathering of tech leaders and innovators in Africa",
+                status: "Coming Q4 2024",
+                icon: "🌍"
+              },
+              {
+                name: "Innovation Hub Network",
+                description: "Connected spaces for collaboration and innovation across the continent",
+                status: "Coming 2025",
+                icon: "🏢"
+              }
+            ].map((project, index) => (
+              <div 
+                key={index}
+                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 
+                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
+                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
+                
+                <div className="relative">
+                  <div className="text-4xl mb-4">{project.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">{project.name}</h3>
+                  <p className="text-gray-400/90 mb-6 min-h-[60px]">{project.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-blue-400/90 text-sm">{project.status}</span>
+                    <div className="h-1.5 w-24 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-500/20 rounded-full w-1/3 animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-20 text-center">
+            <p className="text-gray-400/90 mb-6">
+              Stay updated with our upcoming projects
+            </p>
+            <div className="flex gap-4 justify-center">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                className="px-6 py-3 bg-white/[0.02] border border-white/5 rounded-xl focus:outline-none focus:border-blue-500/50 w-full max-w-sm"
+              />
+              <button className="px-6 py-3 bg-blue-500/10 border border-blue-500/20 rounded-xl hover:bg-blue-500/20 transition-all duration-300">
+                Notify Me
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-900/30 via-black/90 to-violet-900/30" />
+          <div className="absolute inset-0 bg-grid-white/5" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        </div>
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Join the Community?
@@ -650,25 +825,25 @@ function App() {
           <p className="text-gray-400 mb-12 text-xl leading-relaxed max-w-2xl mx-auto">
             Be part of a growing network of tech enthusiasts and professionals. Start your journey with Hyver today.
           </p>
-          <a href="https://tally.so/r/wkJBoR" target='_blank'>
-            <button className="group bg-red-600 text-white px-12 py-4 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 flex items-center gap-2 mx-auto">
-              Join Hyver Now
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </a>
+        <a href="https://tally.so/r/wkJBoR" target='_blank'>
+          <button className="group bg-red-600 text-white px-12 py-4 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 flex items-center gap-2 mx-auto">
+            Join Hyver Now
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </a>
         </div>
       </div>
 
-        {/* Footer avec fond transparent */}
-        <footer className={`${
-          theme === 'dark' 
-            ? 'bg-black/80 border-white/10' 
-            : 'bg-white/80 border-gray-200'
-        } py-16 border-t backdrop-blur-lg`}>
+      {/* Footer avec fond transparent */}
+      <footer className={`${
+        theme === 'dark' 
+          ? 'bg-black/80 border-white/10' 
+          : 'bg-white/80 border-gray-200'
+      } py-16 border-t backdrop-blur-lg`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
-                <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739126342/hyver/orlkktzpillpgyi1ydlb.png" alt="Hyver Logo" className="h-8 mb-6" />
+              <img src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1739126342/hyver/orlkktzpillpgyi1ydlb.png" alt="Hyver Logo" className="h-8 mb-6" />
               <p className="text-gray-400">Building the future of tech communities together.</p>
             </div>
             <div>
@@ -676,15 +851,15 @@ function App() {
               <ul className="space-y-3 text-gray-400">
                 <li><a href="#" className="hover:text-red-500 transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-red-500 transition-colors">Events</a></li>
-                  {/* <li><a href="#" className="hover:text-red-500 transition-colors">Blog</a></li> */}
-                  {/* <li><a href="#" className="hover:text-red-500 transition-colors">Careers</a></li> */}
+                {/* <li><a href="#" className="hover:text-red-500 transition-colors">Blog</a></li> */}
+                {/* <li><a href="#" className="hover:text-red-500 transition-colors">Careers</a></li> */}
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Resources</h4>
               <ul className="space-y-3 text-gray-400">
-                  {/* <li><a href="#" className="hover:text-red-500 transition-colors">Documentation</a></li> */}
-                  {/* <li><a href="#" className="hover:text-red-500 transition-colors">Learning Paths</a></li> */}
+                {/* <li><a href="#" className="hover:text-red-500 transition-colors">Documentation</a></li> */}
+                {/* <li><a href="#" className="hover:text-red-500 transition-colors">Learning Paths</a></li> */}
                 <li><a href="#" className="hover:text-red-500 transition-colors">Projects</a></li>
                 <li><a href="#" className="hover:text-red-500 transition-colors">FAQ</a></li>
               </ul>
@@ -692,38 +867,38 @@ function App() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Connect</h4>
               <div className="flex space-x-4 mb-6">
-                  <a href="https://www.linkedin.com/company/hyver-organization" className="text-gray-400 hover:text-red-500 transition-colors">
-                    <Linkedin className="w-6 h-6" />
+                <a href="https://www.linkedin.com/company/hyver-organization" className="text-gray-400 hover:text-red-500 transition-colors">
+                  <Linkedin className="w-6 h-6" />
                 </a>
-                  <a href="https://x.com/HyverOrg" className="text-gray-400 hover:text-red-500 transition-colors">
+                <a href="https://x.com/HyverOrg" className="text-gray-400 hover:text-red-500 transition-colors">
                   <Twitter className="w-6 h-6" />
                 </a>
-                  {/* <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
+                {/* <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
                   <Discord className="w-6 h-6" />
-                  </a> */}
+                </a> */}
               </div>
-                {/* <p className="text-gray-400">Stay updated with our newsletter</p> */}
-                {/* <div className="mt-4 flex">
-                  <input type="email" placeholder="Enter your email" 
-                    className="bg-white/5 border border-white/10 rounded-l-full px-4 py-2 text-white w-full focus:outline-none focus:border-violet-500" />
-                  <button className="bg-violet-600 text-white px-6 rounded-r-full hover:bg-violet-700 transition-colors neon-box">
+              {/* <p className="text-gray-400">Stay updated with our newsletter</p> */}
+              {/* <div className="mt-4 flex">
+                <input type="email" placeholder="Enter your email" 
+                  className="bg-white/5 border border-white/10 rounded-l-full px-4 py-2 text-white w-full focus:outline-none focus:border-violet-500" />
+                <button className="bg-violet-600 text-white px-6 rounded-r-full hover:bg-violet-700 transition-colors neon-box">
                   Subscribe
                 </button>
-                </div> */}
+              </div> */}
             </div>
           </div>
           <div className="text-center text-gray-400 pt-12 border-t border-white/10">
-              <p className="mb-4">&copy; 2025 Hyver Organization. All rights reserved.</p>
-              {/* <div className="flex justify-center space-x-8 text-sm">
+            <p className="mb-4">&copy; 2025 Hyver Organization. All rights reserved.</p>
+            {/* <div className="flex justify-center space-x-8 text-sm">
               <a href="#" className="hover:text-red-500 transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-red-500 transition-colors">Terms of Service</a>
               <a href="#" className="hover:text-red-500 transition-colors">Code of Conduct</a>
-              </div> */}
+            </div> */}
             </div>
           </div>
         </footer>
         </div>
-      <ScrollToTop />
+    <ScrollToTop />
     </div>
   );
 }
