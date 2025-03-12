@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, Disc as Discord, MapPin } from 'lucide-react';
+import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, MapPin } from 'lucide-react';
 import Navbar from './components/Navbar';
 // import EventCountdown from './components/EventCountdown';
 import { useTheme } from './hooks/useTheme';
@@ -400,8 +400,7 @@ function App() {
       </div>
 
       {/* Call for Applications Section */}
-      <div className="py-32 bg-gradient-to-b from-black/80 to-blue-900/10 relative overflow-hidden">
-        {/* Background Effects */}
+      {/* <div className="py-32 bg-gradient-to-b from-black/80 to-blue-900/10 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid-white/[0.02]" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-blue-500/5" />
@@ -421,7 +420,6 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Benefits */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
                 Why Host TCD?
@@ -451,7 +449,6 @@ function App() {
               ))}
             </div>
 
-            {/* Call to Action */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-2xl blur-xl 
               group-hover:blur-2xl transition-all duration-500 opacity-50" />
@@ -484,7 +481,6 @@ function App() {
             </div>
           </div>
 
-          {/* Requirements */}
           <div className="mt-20">
             <h3 className="text-2xl font-bold mb-10 text-center bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
               Key Requirements
@@ -520,7 +516,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Community Stats - Version modernisée */}
       {/* <div className="py-32 bg-gradient-to-b from-black/80 to-zinc-900/80 backdrop-blur-lg relative overflow-hidden">
@@ -734,7 +730,7 @@ function App() {
       </div>
 
       {/* Future Projects Section */}
-      <div className="py-32 relative overflow-hidden border-t border-white/[0.02]">
+      {/* <div className="py-32 relative overflow-hidden border-t border-white/[0.02]">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid-white/[0.01]" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-red-500/[0.02]" />
@@ -797,7 +793,6 @@ function App() {
             ))}
           </div>
 
-          {/* Newsletter Signup */}
           <div className="mt-20 text-center">
             <p className="text-gray-400/90 mb-6">
               Stay updated with our upcoming projects
@@ -814,9 +809,8 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* CTA Section */}
       <div className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-violet-900/30 via-black/90 to-violet-900/30" />
