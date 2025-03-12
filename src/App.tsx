@@ -5,7 +5,13 @@ import Navbar from './components/Navbar';
 import { useTheme } from './hooks/useTheme';
 // import AfricaMap from './components/AfricaMap';
 import ScrollToTop from './components/ScrollToTop';
+import { createClient } from "@supabase/supabase-js";
 import { Link as RouterLink } from 'react-router-dom';
+require("dotenv").config();
+
+const { PROJECT_URL, ANON_KEY } = process.env;
+
+const supabase = createClient(PROJECT_URL, ANON_KEY);
 
 function App() {
   // const [isCountdownEnabled] = useState(true);
@@ -730,7 +736,7 @@ function App() {
       </div>
 
       {/* Future Projects Section */}
-      {/* <div className="py-32 relative overflow-hidden border-t border-white/[0.02]">
+      <div className="py-32 relative overflow-hidden border-t border-white/[0.02]">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid-white/[0.01]" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-red-500/[0.02]" />
@@ -809,7 +815,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
