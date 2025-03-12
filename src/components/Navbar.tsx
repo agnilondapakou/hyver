@@ -86,7 +86,8 @@ export default function Navbar() {
             
             {/* CTA Button */}
             <a
-              href="#contact"
+              href="https://tally.so/r/wkJBoR"
+              target='blank'
               className="ml-6 px-4 py-2 text-sm bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 
               rounded-lg border border-blue-500/20 transition-all duration-300 hover:-translate-y-0.5"
             >

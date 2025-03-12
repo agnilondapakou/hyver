@@ -159,7 +159,7 @@ function App() {
       </div>
 
         {/* What We Do Section */}
-        <div className="py-32 relative overflow-hidden">
+        <div className="py-32 relative overflow-hidden" id="projects">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-grid-white/[0.02]" />
             <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-blue-500/5" />
@@ -657,7 +657,7 @@ function App() {
       </div>
 
       {/* Countries Section */}
-      <div className="py-32 relative overflow-hidden">
+      <div className="py-32 relative overflow-hidden" id="presence">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid-white/[0.02]" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5" />
