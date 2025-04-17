@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, MapPin } from 'lucide-react';
+import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, MapPin, ArrowBigDown } from 'lucide-react';
 import Navbar from './components/Navbar';
 // import EventCountdown from './components/EventCountdown';
 import { useTheme } from './hooks/useTheme';
@@ -79,13 +79,15 @@ function App() {
                 <a href="https://tally.so/r/wkJBoR" target='_blank'>
                   <button className="group px-8 py-4 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 transition-all duration-300 neon-box flex items-center justify-center gap-2">
                     Join the Community
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
                 </a>
-                {/* <button className="px-8 py-4 border border-white/10 rounded-full font-semibold hover:bg-white/5 transition-all duration-300 flex items-center gap-2">
-                  Explore Projects
-                  <ArrowRight className="w-5 h-5" />
-              </button> */}
+                <a href="../public/TCD-2025-prospectus.pdf" download target="_blank" rel="noopener noreferrer">
+                  <button className="px-8 py-4 bg-violet-600 border border-white/10 rounded-full font-semibold hover:bg-white/5 transition-all duration-300 flex items-center gap-2">
+                    Download our next event prospectus
+                    <ArrowBigDown className="w-5 h-5" />
+                  </button>
+                </a>
               </div>
 
               {/* Stats rapides */}
@@ -186,7 +188,7 @@ function App() {
                 {
                   title: "Tech Communities Clubs",
                   description: "Excellence program for tech-passionate students",
-                  path: "#",
+                  path: "http://tcc.hyver.org/",
                   logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739116626/hyver/sxdttxb9urni5zjl49gj.png"
                 },
                 {
@@ -199,6 +201,7 @@ function App() {
                 <RouterLink
                   key={index}
                   to={project.path}
+                  target="_blank"
                   className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 
                   hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1"
                 >
