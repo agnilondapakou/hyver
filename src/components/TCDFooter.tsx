@@ -17,15 +17,9 @@ export default function TCDFooter() {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-violet-400 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-violet-400 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-violet-400 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-violet-400 transition-colors">
+              <a href="https://www.linkedin.com/company/tech-comm-day" target='_blank' className="text-gray-400 hover:text-violet-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -45,16 +39,6 @@ export default function TCDFooter() {
                   Become a Sponsor
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Previous Editions
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  FAQ
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -63,15 +47,15 @@ export default function TCDFooter() {
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:contact@tcd2025.com" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <a href="mailto:techcommunitiesday@gmail.com" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  contact@tcd2025.com
+                  techcommunitiesday@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+22500000000" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <a href="tel:+22898776682" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  +225 00 00 00 00
+                  (+228) 70405036 / 98776682
                 </a>
               </li>
             </ul>
@@ -84,14 +68,6 @@ export default function TCDFooter() {
             <p className="text-gray-400 text-sm">
               © {currentYear} Tech Communities Day. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
-                Legal Notice
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
-                Privacy Policy
-              </a>
-            </div>
           </div>
         </div>
       </div>

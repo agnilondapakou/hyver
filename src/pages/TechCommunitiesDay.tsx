@@ -243,22 +243,22 @@ export default function TechCommunitiesDay() {
 
           {/* Contact Section */}
           <div id="contact" className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <a href="tel:+22500000000" className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-blue-500/20 hover:bg-white/10 transition-all duration-300">
+            <a href="tel:+22898776682" className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-blue-500/20 hover:bg-white/10 transition-all duration-300">
               <Phone className="w-8 h-8 text-blue-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">{t('phone')}</h3>
-              <p className="text-gray-400">+225 00 00 00 00</p>
+              <p className="text-gray-400">(+228) 70405036 / 98776682</p>
             </a>
 
-            <a href="mailto:sponsors@tcd2025.com" className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-blue-500/20 hover:bg-white/10 transition-all duration-300">
+            <a href="mailto:techcommunitiesday@gmail.com" className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-blue-500/20 hover:bg-white/10 transition-all duration-300">
               <Mail className="w-8 h-8 text-blue-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">{t('email')}</h3>
-              <p className="text-gray-400">sponsors@tcd2025.com</p>
+              <p className="text-gray-400">techcommunitiesday@gmail.com</p>
             </a>
 
-            <a href="https://wa.me/22500000000" target="_blank" rel="noopener noreferrer" className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-blue-500/20 hover:bg-white/10 transition-all duration-300">
+            <a href="https://wa.me/22898776682" target="_blank" rel="noopener noreferrer" className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-blue-500/20 hover:bg-white/10 transition-all duration-300">
               <MessageCircle className="w-8 h-8 text-blue-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">{t('whatsapp')}</h3>
-              <p className="text-gray-400">+225 00 00 00 00</p>
+              <p className="text-gray-400">+228 98776682</p>
             </a>
           </div>
         </div>
