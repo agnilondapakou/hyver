@@ -82,12 +82,6 @@ function App() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 </a>
-                <a href="../public/TCD-2025-prospectus.pdf" download target="_blank" rel="noopener noreferrer">
-                  <button className="px-8 py-4 bg-violet-600 border border-white/10 rounded-full font-semibold hover:bg-white/5 transition-all duration-300 flex items-center gap-2">
-                    Download our next event prospectus
-                    <ArrowBigDown className="w-5 h-5" />
-                  </button>
-                </a>
               </div>
 
               {/* Stats rapides */}
@@ -182,7 +176,7 @@ function App() {
                 {
                   title: "Tech Communities Day",
                   description: "The largest gathering of tech communities in Africa",
-                  path: "#",
+                  path: "/tech-communities-day",
                   logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739117395/hyver/ywoot4qudcn1dbbd5i9y.png"
                 },
                 {
@@ -758,7 +752,7 @@ function App() {
                 name: "Tech Communities Academy",
                 description: "A comprehensive learning platform for tech enthusiasts across Africa",
                 status: "Coming Q3 2024",
-                icon: "��"
+                icon: ""
               },
               {
                 name: "African Tech Summit",
