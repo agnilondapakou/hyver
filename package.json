@@ -7,13 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-icons": "node scripts/generate-icons.cjs",
+    "download-logo": "node scripts/download-logo.cjs"
   },
   "dependencies": {
+    "@types/react-helmet": "^6.1.11",
     "@types/react-scroll": "^1.8.10",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^7.1.5",
     "react-scroll": "^1.9.2"
   },
@@ -28,6 +32,8 @@
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0",
     "postcss": "^8.4.35",
+    "sharp": "^0.34.1",
+    "svg2png": "^4.1.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
