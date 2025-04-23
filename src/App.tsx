@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, MapPin, ArrowBigDown } from 'lucide-react';
+import { Users, Laptop, Calendar, ArrowRight, Twitter, Linkedin, MapPin } from 'lucide-react';
 import Navbar from './components/Navbar';
 // import EventCountdown from './components/EventCountdown';
 import { useTheme } from './hooks/useTheme';

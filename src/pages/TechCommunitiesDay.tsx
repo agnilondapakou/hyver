@@ -1,4 +1,4 @@
-import { Calendar, Users, ArrowBigDown, Check, Phone, Mail, MessageCircle } from 'lucide-react';
+import { Calendar, Users, ArrowBigDown, Check, Phone, Mail, MessageCircle, MapPin } from 'lucide-react';
 import EventCountdown from '../components/EventCountdown';
 import TCDNavbar from '../components/TCDNavbar';
 import TCDFooter from '../components/TCDFooter';
@@ -25,7 +25,11 @@ export default function TechCommunitiesDay() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
           <div className="text-center">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-violet-500/10 text-violet-400 border-violet-500/20 backdrop-blur-sm border mb-6">
-              {t('edition')}
+              <Calendar className="w-4 h-4 mr-2" />
+              19 Juillet 2025
+              <span className="mx-2">•</span>
+              <MapPin className="w-4 h-4 mr-2" />
+              Institut Français du Togo
             </span>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Tech Communities
@@ -109,7 +113,7 @@ export default function TechCommunitiesDay() {
                   <h3 className="text-2xl font-bold">{t('communitiesFaire')}</h3>
                   <p className="text-violet-400">{t('communitiesFaireTime')}</p>
                 </div>
-              </div>
+            </div>
               <ul className="space-y-4 text-gray-400">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-violet-500 mt-1.5" />
@@ -259,6 +263,41 @@ export default function TechCommunitiesDay() {
               <MessageCircle className="w-8 h-8 text-blue-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">{t('whatsapp')}</h3>
               <p className="text-gray-400">+228 98776682</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Location Section */}
+      <div className="py-20 bg-black/80 backdrop-blur-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-violet-500/10 text-violet-400 border border-violet-500/20 backdrop-blur-sm mb-4">
+              {t('location')}
+            </span>
+            <h2 className="text-4xl font-bold mb-6">Institut Français du Togo</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Avenue du Général de Gaulle, Lomé, Togo
+            </p>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden border border-violet-500/20">
+            <img 
+              src="https://res.cloudinary.com/dpofk8xy0/image/upload/v1745429430/hyver/eadeeaei6xamdfi2wryf.jpg" 
+              alt="Institut Français du Togo" 
+              className="w-full h-auto object-cover aspect-video"
+            />
+          </div>
+
+          <div className="mt-8 text-center">
+            <a 
+              href="https://maps.app.goo.gl/4sSXgiGU3ZqpapTG8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-violet-600 text-white rounded-full hover:bg-violet-700 transition-all duration-300"
+            >
+              <MapPin className="w-5 h-5" />
+              {t('openInMaps')}
             </a>
           </div>
         </div>

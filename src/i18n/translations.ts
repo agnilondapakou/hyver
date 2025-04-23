@@ -58,8 +58,15 @@ export const translations = {
     becomeSponsor: "Become a Sponsor",
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
-    allRightsReserved: "All rights reserved"
+    allRightsReserved: "All rights reserved",
+
+    // Location
+    location: "Event Location",
+    locationTitle: "Institut Français du Togo",
+    locationAddress: "Avenue du Général de Gaulle, Lomé, Togo",
+    openInMaps: "Open in Google Maps",
   },
+
   fr: {
     // Navbar
     program: "Programme",
@@ -119,6 +126,12 @@ export const translations = {
     becomeSponsor: "Devenir Sponsor",
     legalNotice: "Mentions Légales",
     privacyPolicy: "Politique de Confidentialité",
-    allRightsReserved: "Tous droits réservés"
+    allRightsReserved: "Tous droits réservés",
+
+    // Loccalisation
+    location: "Localisation",
+    locationTitle: "French Institute of Togo",
+    locationAddress: "Avenue du Général de Gaulle, Lomé, Togo",
+    openInMaps: "Ouvrir dans Google Maps",
   }
 }; 
