@@ -50,7 +50,7 @@ export default function TechCommunitiesDay() {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
-                href={language === 'fr' ? "/public/assets/documents/tcd-2025-prospectus-fr.pdf" : "/public/assets/documents/tcd-2025-prospectus-en.pdf"} 
+                href={language === 'fr' ? "/assets/documents/tcd-2025-prospectus-fr.pdf" : "/public/assets/documents/tcd-2025-prospectus-en.pdf"} 
                 download 
                 target="_blank" 
                 rel="noopener noreferrer"
