@@ -311,52 +311,6 @@ function App() {
           </div>
         </div>
 
-        {/* Section Événements */}
-        <div className="py-32 bg-black/80 backdrop-blur-lg">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-6 neon-text">Events</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-              Join us at our next events
-              </p>
-            </div>
-
-            {/* Conteneur d'événement centré */}
-            <div className="flex justify-center">
-              <div className="max-w-2xl w-full p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle">
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 rounded-2xl bg-violet-500/10 flex items-center justify-center">
-                      <Calendar className="w-10 h-10 text-violet-400" />
-                    </div>
-                  </div>
-                  <div className="flex-grow text-center md:text-left">
-                    <h3 className="text-2xl font-bold mb-2">Tech Communities Day 2025</h3>
-                    <p className="text-gray-400 mb-4">
-                    Africa's largest gathering of tech communities
-                    </p>
-                    <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                      {/* <span className="inline-flex items-center gap-2 text-violet-400">
-                        <Calendar className="w-4 h-4" />
-                        19 Juillet 2025
-                      </span> */}
-                      <span className="inline-flex items-center gap-2 text-violet-400">
-                        <MapPin className="w-4 h-4" />
-                        Lomé, Togo
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <button className="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all duration-300">
-                      Register
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Gallery Section */}
         <div className="py-32 bg-black/80 backdrop-blur-lg relative overflow-hidden" id="gallery">
           <div className="absolute inset-0">
@@ -479,6 +433,103 @@ function App() {
                   />
                   <div className="absolute inset-0 bg-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Partners Section */}
+      <div className="py-32 relative overflow-hidden" id="partners">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.02]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
+              Our Partners
+            </span>
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+              They Believed in Us
+            </h2>
+            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
+              Working together to build Africa's tech ecosystem
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              {
+                name: "République Togolaise",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123720/hyver/bxlbl3mj9ze7tju1tcl5.png",
+                className: "h-16 md:h-20"
+              },
+              {
+                name: "GIZ",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123729/hyver/djme4rlmeq9afqjl2y9k.png",
+                className: "h-12 md:h-16"
+              },
+              {
+                name: "Kondjigbalẽ",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739114963/hyver/fbq9i5ihx0ky21owh8dh.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Killigiants",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739122839/hyver/xfwnugxyopeu00q9ngwn.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Lomé Business School",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124078/hyver/zgafm8v60bodfuozxydm.png",
+                className: "h-16 md:h-20"
+              },
+              {
+                name: "Agence Togo Digital",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124280/hyver/hmb9oxcfcjcjxpp73zy6.png",
+                className: "h-12 md:h-16"
+              },
+              {
+                name: "Google DSC LBS",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124382/hyver/ixk7qdmqjklldviqthzb.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Google DSC UL",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124290/hyver/wajh0lbw5zxolht8g6bn.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Google DSC IAI",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/wn2adl5xzp6a40kfjxjw.png",
+                className: "h-14 md:h-16"
+              },
+              {
+                name: "Google DSC Defitech",
+                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/lpvjaes7l3lrv3wm85cg.png",
+                className: "h-14 md:h-16"
+              }
+            ].map((partner, index) => (
+              <div 
+                key={index}
+                className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 
+                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
+                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
+                
+                <div className="relative flex items-center justify-center min-h-[80px]">
+                  <div className="absolute inset-0 bg-white/0 group-hover:bg-white/100 transition-all duration-300 rounded-xl" />
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className={`relative z-10 w-auto object-contain opacity-75 
+                    group-hover:opacity-100 transition-all duration-300
+                    ${partner.className}`}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
