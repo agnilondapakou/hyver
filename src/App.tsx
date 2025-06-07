@@ -132,6 +132,13 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
+                title: "Tech Communities Clubs Awards",
+                date: "Closing on June 29, 2025",
+                description: "After weeks of commitment, passion and impact within their universities, 7 exceptional Leaders from the Tech Communities Clubs community have been selected to take part in the very first edition of the TCC AWARDS!",
+                image: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1749260753/hyver/ecblbqfjzs9wwfxagp6v.png",
+                path: "https://www.tcc.hyver.org/awards"
+              },
+              {
                 title: "Cohort 2 of Tech Communities Clubs",
                 date: "Coming Soon",
                 description: "We're thrilled to announce that registrations for Cohort 2 of TCC LEADS will be opening very soon!",
