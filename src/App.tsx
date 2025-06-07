@@ -109,6 +109,87 @@ function App() {
           </div>
       </div>
 
+      {/* News Section */}
+      <div className="py-32 relative overflow-hidden" id="news">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.02]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
+              Latest News
+            </span>
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+              Stay Updated
+            </h2>
+            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
+              Latest updates and announcements from our community
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Cohort 2 of Tech Communities Clubs",
+                date: "Coming Soon",
+                description: "We're thrilled to announce that registrations for Cohort 2 of TCC LEADS will be opening very soon!",
+                image: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1749257798/hyver/l7hujub8ghyjwivktcku.png",
+                path: "https://www.linkedin.com/posts/tcclubs_tcc-hyver-activity-7336461589987975168-msme?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC-4cngBZFmygb8wM5rcsTKtSn3KBrwWCc4"
+              },
+              {
+                title: "Announcing the 2025 TCD's venue",
+                date: "July 19, 2025",
+                description: 'Tech Communities Day 2025 will officially take place at the "French Institute of Togo"',
+                image: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1749257796/hyver/kk4rmzx3axslbjosj67i.png",
+                path: "https://www.linkedin.com/posts/tech-comm-day_free-techcommunitiesday2025-togotech-activity-7336710486962413568-I831?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC-4cngBZFmygb8wM5rcsTKtSn3KBrwWCc4"
+              },
+              {
+                title: "Call for Makers",
+                date: "June 20, 2025",
+                description: "We're building the MVP of Afro Builders, the largest Open Source database of tech solutions developed by Africans - and we need YOU to help make it happen! 💡",
+                image: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1749257768/hyver/lbdayqngcclowby3cxfl.png",
+                path: "https://www.linkedin.com/posts/hyver-organization_afrobuilders-opensource-callformakers-activity-7336677460379414528-lUlb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC-4cngBZFmygb8wM5rcsTKtSn3KBrwWCc4"
+              }
+            ].map((news, index) => (
+              <div 
+                key={index}
+                className="group relative overflow-hidden rounded-2xl bg-white/[0.02] border border-white/5 
+                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
+                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
+                
+                <div className="relative">
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src={news.image} 
+                      alt={news.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="text-blue-400/90 text-sm mb-2">{news.date}</div>
+                    <h3 className="text-xl font-bold mb-3">{news.title}</h3>
+                    <p className="text-gray-400/90 mb-4">{news.description}</p>
+                    <a 
+                      href={news.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-300/80 group-hover:text-blue-300 transition-colors"
+                    >
+                      Read more 
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Community Benefits Section */}
         <div className="py-32 bg-gradient-to-b from-zinc-900/80 to-black/80 backdrop-blur-lg relative" id="about">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,25 +252,31 @@ function App() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
                   title: "Tech Communities Day",
                   description: "The largest gathering of tech communities in Africa",
                   path: "/tech-communities-day",
-                  logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739117395/hyver/ywoot4qudcn1dbbd5i9y.png"
+                  logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1749257356/hyver/aqdzoo0zr6nvwtffau2f.png"
                 },
                 {
                   title: "Tech Communities Clubs",
                   description: "Excellence program for tech-passionate students",
                   path: "http://tcc.hyver.org/",
-                  logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739116626/hyver/sxdttxb9urni5zjl49gj.png"
+                  logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1749257356/hyver/aqdzoo0zr6nvwtffau2f.png"
+                },
+                {
+                  title: "Afro Builders",
+                  description: "Afro Builders, made by Africa, for the world.",
+                  path: "https://afrobuilders.hyver.org/",
+                  logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739128156/hyver/xasndqlpxlvz35d4ll1f.png"
                 },
                 {
                   title: "Open Source For All",
-                  description: "Promoting open source in Africa",
-                  path: "#",
-                  logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739117673/hyver/knczly3kmed9hp9oaux2.svg"
+                  description: "Experience Open Source. Build Your Future.",
+                  path: "https://osfa.hyver.org/",
+                  logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1749256802/hyver/hydfyuctc35tiudbdhaa.png"
                 }
               ].map((project, index) => (
                 <RouterLink
@@ -207,7 +294,7 @@ function App() {
                       <img 
                         src={project.logo} 
                         alt={project.title} 
-                        className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 group-hover:opacity-100 
+                        className="w-32 h-32 md:w-20 md:h-40 object-contain opacity-80 group-hover:opacity-100 
                         transition-all duration-300 transform group-hover:scale-105"
                       />
                     </div>
@@ -395,418 +482,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      {/* Call for Applications Section */}
-      {/* <div className="py-32 bg-gradient-to-b from-black/80 to-blue-900/10 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-blue-500/5" />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
-            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
-              Applications Open
-            </span>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Host TCD 2026
-            </h2>
-            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
-              Shape the future of tech communities in Africa by hosting the next edition
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
-                Why Host TCD?
-              </h3>
-              {[
-                {
-                  title: "Global Recognition",
-                  description: "Position your community at the forefront of Africa's tech ecosystem"
-                },
-                {
-                  title: "Network Expansion",
-                  description: "Connect with influential tech leaders and communities across the continent"
-                },
-                {
-                  title: "Economic Impact",
-                  description: "Drive technological innovation and growth in your local ecosystem"
-                }
-              ].map((benefit, index) => (
-                <div 
-                  key={index} 
-                  className="p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/5 
-                  transition-all duration-300 hover:translate-x-1"
-                >
-                  <h4 className="text-lg font-semibold mb-2 text-white/90">{benefit.title}</h4>
-                  <p className="text-gray-400/80">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-2xl blur-xl 
-              group-hover:blur-2xl transition-all duration-500 opacity-50" />
-              <div className="relative p-8 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-sm">
-                <h3 className="text-2xl font-bold mb-6 text-white/90">Ready to Apply?</h3>
-                <p className="text-gray-400/90 mb-8">
-                  Submit your application to host Tech Communities Day 2026
-                </p>
-                <a 
-                  href="https://forms.gle/your-form-url" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-block w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white 
-                  rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 
-                  transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/25"
-                >
-                  Apply Now
-                </a>
-                <div className="mt-8 grid grid-cols-2 gap-4 text-sm">
-                  <div className="p-4 rounded-xl bg-black/20 backdrop-blur-sm">
-                    <div className="text-blue-300/90 font-medium mb-1">Deadline</div>
-                    <div className="text-white/80">Dec 31, 2025</div>
-                  </div>
-                  <div className="p-4 rounded-xl bg-black/20 backdrop-blur-sm">
-                    <div className="text-blue-300/90 font-medium mb-1">Announcement</div>
-                    <div className="text-white/80">Mar 1, 2026</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-20">
-            <h3 className="text-2xl font-bold mb-10 text-center bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
-              Key Requirements
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                {
-                  requirement: "Active Community",
-                  detail: "2+ Years"
-                },
-                {
-                  requirement: "Venue Capacity",
-                  detail: "2000+ People"
-                },
-                {
-                  requirement: "Tech Network",
-                  detail: "Local Ecosystem"
-                },
-                {
-                  requirement: "Experience",
-                  detail: "Event Organization"
-                }
-              ].map((req, index) => (
-                <div 
-                  key={index} 
-                  className="text-center p-6 rounded-xl bg-white/[0.02] border border-white/5 
-                  hover:bg-white/[0.04] transition-all duration-300"
-                >
-                  <div className="text-white/80 font-medium mb-1">{req.requirement}</div>
-                  <div className="text-blue-300/80 text-sm">{req.detail}</div>
-            </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Community Stats - Version modernisée */}
-      {/* <div className="py-32 bg-gradient-to-b from-black/80 to-zinc-900/80 backdrop-blur-lg relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-grid-white/5" />
-          <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-violet-500/10" />
-    </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { number: "5K+", label: "Community Members", icon: Users },
-              { number: "200+", label: "Events Hosted", icon: Calendar },
-              { number: "50+", label: "Tech Partners", icon: Laptop },
-              { number: "20+", label: "Cities", icon: MessageSquare }
-            ].map((stat, index) => (
-              <div key={index} className="relative group">
-                <div className="absolute inset-0 bg-violet-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 neon-box-subtle">
-                  <stat.icon className="w-8 h-8 text-violet-400 mb-4" />
-                  <div className="text-5xl font-bold mb-3 bg-gradient-to-r from-violet-400 to-violet-600 text-transparent bg-clip-text group-hover:scale-110 transition-transform">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-400 text-lg">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-      {/* Partners Section */}
-      <div className="py-32 relative overflow-hidden" id="partners">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
-            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
-              Our Partners
-            </span>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              They Believed in Us
-            </h2>
-            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
-              Working together to build Africa's tech ecosystem
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              {
-                name: "République Togolaise",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123720/hyver/bxlbl3mj9ze7tju1tcl5.png",
-                className: "h-16 md:h-20"
-              },
-              {
-                name: "GIZ",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739123729/hyver/djme4rlmeq9afqjl2y9k.png",
-                className: "h-12 md:h-16"
-              },
-              {
-                name: "Kondjigbalẽ",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739114963/hyver/fbq9i5ihx0ky21owh8dh.png",
-                className: "h-14 md:h-16"
-              },
-              {
-                name: "Killigiants",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739122839/hyver/xfwnugxyopeu00q9ngwn.png",
-                className: "h-14 md:h-16"
-              },
-              {
-                name: "Lomé Business School",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124078/hyver/zgafm8v60bodfuozxydm.png",
-                className: "h-16 md:h-20"
-              },
-              {
-                name: "Agence Togo Digital",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124280/hyver/hmb9oxcfcjcjxpp73zy6.png",
-                className: "h-12 md:h-16"
-              },
-              {
-                name: "Google DSC LBS",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124382/hyver/ixk7qdmqjklldviqthzb.png",
-                className: "h-14 md:h-16"
-              },
-              {
-                name: "Google DSC UL",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124290/hyver/wajh0lbw5zxolht8g6bn.png",
-                className: "h-14 md:h-16"
-              },
-              {
-                name: "Google DSC IAI",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/wn2adl5xzp6a40kfjxjw.png",
-                className: "h-14 md:h-16"
-              },
-              {
-                name: "Google DSC Defitech",
-                logo: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1739124289/hyver/lpvjaes7l3lrv3wm85cg.png",
-                className: "h-14 md:h-16"
-              }
-            ].map((partner, index) => (
-              <div 
-                key={index}
-                className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 
-                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
-                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
-                
-                <div className="relative flex items-center justify-center min-h-[80px]">
-                  <div className="absolute inset-0 bg-white/0 group-hover:bg-white/100 transition-all duration-300 rounded-xl" />
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className={`relative z-10 w-auto object-contain opacity-75 
-                    group-hover:opacity-100 transition-all duration-300
-                    ${partner.className}`}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Partner CTA */}
-          {/* <div className="mt-20 text-center">
-            <a 
-              href="#contact" 
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.02] border border-white/5 
-              hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 text-gray-400/90 hover:text-white/90"
-            >
-              Become a Partner
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div> */}
-        </div>
-      </div>
-
-      {/* Countries Section */}
-      <div className="py-32 relative overflow-hidden" id="presence">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
-            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
-              Our Presence
-            </span>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Active Countries
-            </h2>
-            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
-              Building tech communities across Africa
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Benin",
-                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647692/hyver/ukumm0cwh6vxssk1jll1.png",
-                // communities: 8,
-                members: "Emerging tech ecosystem"
-              },
-              {
-                name: "Ivory Coast",
-                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647694/hyver/ijlhwayfqsufofiis9oy.png",
-                // communities: 6,
-                members: "Major West African tech hub"
-              },
-              {
-                name: "Niger",
-                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647695/hyver/cvcdjhphchvt4gv1safx.png",
-                // communities: 4,
-                members: "Growing tech community"
-              },
-              {
-                name: "Togo",
-                flag: "https://res.cloudinary.com/dpofk8xy0/image/upload/v1741647696/hyver/fzth5qkrz9q5ja5xxe7m.png",
-                // communities: 12,
-                members: "Dynamic and growing community"
-              }
-            ].map((country, index) => (
-              <div 
-                key={index}
-                className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 
-                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
-                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
-                
-                <div className="relative flex flex-col items-center text-center">
-                  <img 
-                    src={country.flag} 
-                    alt={`${country.name} flag`}
-                    className="w-20 h-20 object-cover rounded-full mb-4 border-2 border-white/10"
-                  />
-                  <h3 className="text-xl font-bold mb-2">{country.name}</h3>
-                  <div className="text-gray-400">
-                    {/* {/* <p className="mb-1">{country.communities} Communities</p> */}
-                    <p>{country.members} </p> 
-            </div>
-            </div>
-            </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Future Projects Section */}
-      {/* <div className="py-32 relative overflow-hidden border-t border-white/[0.02]">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-grid-white/[0.01]" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-red-500/[0.02]" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
-            <span className="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-500/5 text-blue-300 border border-blue-500/10 backdrop-blur-sm mb-4">
-              Coming Soon
-            </span>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Future Projects
-            </h2>
-            <p className="text-gray-400/90 max-w-2xl mx-auto text-lg">
-              Exciting initiatives on the horizon
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Tech Communities Academy",
-                description: "A comprehensive learning platform for tech enthusiasts across Africa",
-                status: "Coming Q3 2024",
-                icon: ""
-              },
-              {
-                name: "African Tech Summit",
-                description: "The largest gathering of tech leaders and innovators in Africa",
-                status: "Coming Q4 2024",
-                icon: "🌍"
-              },
-              {
-                name: "Innovation Hub Network",
-                description: "Connected spaces for collaboration and innovation across the continent",
-                status: "Coming 2025",
-                icon: "🏢"
-              }
-            ].map((project, index) => (
-              <div 
-                key={index}
-                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 
-                hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-red-500/5 rounded-2xl 
-                blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-50" />
-                
-                <div className="relative">
-                  <div className="text-4xl mb-4">{project.icon}</div>
-                  <h3 className="text-xl font-bold mb-3">{project.name}</h3>
-                  <p className="text-gray-400/90 mb-6 min-h-[60px]">{project.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-blue-400/90 text-sm">{project.status}</span>
-                    <div className="h-1.5 w-24 bg-white/5 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-500/20 rounded-full w-1/3 animate-pulse" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-20 text-center">
-            <p className="text-gray-400/90 mb-6">
-              Stay updated with our upcoming projects
-            </p>
-            <div className="flex gap-4 justify-center">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="px-6 py-3 bg-white/[0.02] border border-white/5 rounded-xl focus:outline-none focus:border-blue-500/50 w-full max-w-sm"
-              />
-              <button className="px-6 py-3 bg-blue-500/10 border border-blue-500/20 rounded-xl hover:bg-blue-500/20 transition-all duration-300">
-                Notify Me
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       <div className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">

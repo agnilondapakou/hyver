@@ -19,6 +19,7 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
+    { id: 'news', label: 'News' },
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'partners', label: 'Partners' },

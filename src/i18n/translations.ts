@@ -65,6 +65,21 @@ export const translations = {
     locationTitle: "Institut Français du Togo",
     locationAddress: "Avenue du Général de Gaulle, Lomé, Togo",
     openInMaps: "Open in Google Maps",
+
+    // New translations
+    name: 'Name',
+    role: 'Role',
+    uxDesigner: 'UX Designer',
+    frontendDev: 'Frontend Developer',
+    dataManager: 'Data Manager',
+    graphicDesigner: 'Graphic Designer',
+    enterName: 'Enter your name',
+    enterEmail: 'Enter your email',
+    submit: 'Submit',
+    joinUs: 'Join Our Team',
+    joinUsDescription: 'Fill out the form below to join our community of tech professionals',
+    registrationSuccess: 'Registration successful!',
+    registrationError: 'An error occurred during registration'
   },
 
   fr: {
@@ -133,5 +148,20 @@ export const translations = {
     locationTitle: "French Institute of Togo",
     locationAddress: "Avenue du Général de Gaulle, Lomé, Togo",
     openInMaps: "Ouvrir dans Google Maps",
+
+    // New translations
+    name: 'Nom',
+    role: 'Rôle',
+    uxDesigner: 'Designer UX',
+    frontendDev: 'Développeur Frontend',
+    dataManager: 'Gestionnaire de Données',
+    graphicDesigner: 'Designer Graphique',
+    enterName: 'Entrez votre nom',
+    enterEmail: 'Entrez votre email',
+    submit: 'Soumettre',
+    joinUs: 'Rejoignez Notre Équipe',
+    joinUsDescription: 'Remplissez le formulaire ci-dessous pour rejoindre notre communauté de professionnels tech',
+    registrationSuccess: 'Inscription réussie !',
+    registrationError: 'Une erreur est survenue lors de l\'inscription'
   }
 }; 
